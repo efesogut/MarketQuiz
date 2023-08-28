@@ -49,9 +49,14 @@ func main() {
 		{Name: "Üzüm", Price: 2.00},
 	}
 
-	fmt.Println("Ürünler:")
+	var describables []Describable
 	for _, item := range items {
-		fmt.Println(item.Description())
+		describables = append(describables, item)
+	}
+
+	fmt.Println("Ürünler:")
+	for _, describable := range describables {
+		fmt.Println(describable.Description())
 	}
 
 	total := totalPrice(items)
